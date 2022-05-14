@@ -1,0 +1,22 @@
+.rating {
+    display: flex;
+    .rating_btn {
+        background-color: #388e3c;
+        border-radius: 4px;
+        color: #fff;
+        padding: 2px 7px;
+        font-size: 12px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 12px;
+            margin-left: 3px;
+        }
+    }
+    .rating_count {
+        margin-left: 7px;
+        color: rgb(104, 104, 104);
+        font-weight: 500;
+    }
+}
