@@ -1,8 +1,9 @@
+import Button from "../button";
 import { Formik } from "formik";
 import React from "react";
 import Input from "../input";
 import style from "./Signup.module.scss";
-
+import * as Yup from "yup";
 const INITIAL_VALUES = {
   name: "",
   email: "",
@@ -13,14 +14,26 @@ const INITIAL_VALUES = {
   pincode: "",
   phone: "",
 };
+const VALIDATIONSCHEMA = Yup.object().shape({
+  name: Yup.string().required("Enter Name"),
+  email:Yup.string().required("Enter email").email("Enter valid email"),
+  password:Yup.string().required("Enter a new password").min(6,"Enter a minimum of 6")
+});
 const Signup = ({ onClose }) => {
+  const handleSubmit = (values) => {
+    console.log(values);
+  };
   return (
     <div className={style.signup}>
       <div className={style.close} onClick={onClose}>
         x
       </div>
       <div className={style.title}>Signup</div>
-      <Formik initialValues={INITIAL_VALUES}>
+      <Formik
+        initialValues={INITIAL_VALUES}
+        validationSchema={VALIDATIONSCHEMA}
+        onSubmit={handleSubmit}
+      >
         {({ values, handleSubmit, handleBlur, handleChange }) => (
           <form onSubmit={handleSubmit}>
             <Input
@@ -31,7 +44,7 @@ const Signup = ({ onClose }) => {
               onChange={handleChange}
               type="text"
             />
-           <Input
+            <Input
               placeholder="Email"
               name="email"
               value={values.email}
@@ -82,11 +95,15 @@ const Signup = ({ onClose }) => {
             <Input
               placeholder="Phone number"
               name="phone"
-              value={values.name}
+              value={values.phone}
               onBlur={handleBlur}
               onChange={handleChange}
               type="number"
             />
+            <div className="text-center">
+              {" "}
+              <Button primary={true}>Submit</Button>
+            </div>
           </form>
         )}
       </Formik>
