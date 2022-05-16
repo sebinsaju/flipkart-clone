@@ -4,13 +4,13 @@ import style from "./Rating.module.scss";
 const Rating = ({ data }) => {
   return (
     <>
-      {data && data.rate && data.count && (
+      {data && (
         <div className={style.rating}>
           <div className={style.rating_btn}>
-            {data.rate}
+            {data}
             <img src="../assets/star.png" />
           </div>
-          <div className={style.rating_count}>({data.count})</div>
+         {data.count &&  <div className={style.rating_count}>({data.count})</div>}
         </div>
       )}
     </>

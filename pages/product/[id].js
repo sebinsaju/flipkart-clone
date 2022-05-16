@@ -16,12 +16,13 @@ const Product = (props) => {
             </div>
           </div>
           <div className={style.product_detail_right}>
-            <div className={style.product_name}>{props.title}</div>
+            <div className={style.product_name}>{props.name}</div>
             <div className={style.price}>{productPrice(props.price)}</div>
             <div className={style.rating}>
               <Rating data={props.rating} />
             </div>
             <div className={style.description}>{props.description}</div>
+            <div className="d-flex"><div className={style.features_title}>Color :</div><div className={style.feature}>{props.category.color}</div></div>
           </div>
         </div>
       </Container>

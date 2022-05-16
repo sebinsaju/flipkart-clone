@@ -18,13 +18,13 @@ const ProductCard = ({ data }) => {
         </div>
       </div>
       <div className={style.product_card_details}>
-        <div className={style.title}>{data.title}</div>
+        <div className={style.title}>{data.name}</div>
         <div className={style.description}>{data.description}</div>
-        <div className={style.rating}>
+       {data.rating && <div className={style.rating}>
           <Rating data={data.rating} />
-        </div>
-        <div className={style.product_price}>{productPrice(data.price)}</div>
-        <div className={style.product_category}>{data.category}</div>
+        </div>}
+        {data.price && <div className={style.product_price}>{productPrice(data.price)}</div>}
+        {/* {data.category && <div className={style.product_category}>{data.category}</div>} */}
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ const Products = (props) => {
             {data.map((product, index) => {
               return (
                 <div key={index}>
-                  <Link href={`/product/${product.id}`}>
+                  <Link href={`/product/${product._id}`}>
                     <a>
                       <ProductCard data={product} />
                     </a>

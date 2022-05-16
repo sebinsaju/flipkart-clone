@@ -7,4 +7,12 @@
     border: 0;
     cursor: pointer;
     font-weight: 600;
+    outline: none;
+    &.primary {
+        background-color: #2874f0;
+        color: #fff;
+    }
+    &.disabled{
+        background-color: #91bbff;
+    }
 }

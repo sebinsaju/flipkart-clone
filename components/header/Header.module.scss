@@ -7,7 +7,7 @@
     padding: 10px 100px;
     .logo {
         line-height: 0;
-        img{
+        img {
             width: 100%;
             height: 100%;
         }
@@ -22,11 +22,12 @@
         height: 100%;
         margin: 0 30px;
     }
-    .cart{
+    .cart {
         display: flex;
         cursor: pointer;
         align-items: center;
-        .cart_title{
+        color: #fff;
+        .cart_title {
             margin-left: 10px;
         }
     }

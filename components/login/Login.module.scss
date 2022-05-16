@@ -1,0 +1,31 @@
+.login_wrapper{
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff;
+    color: #111;
+    position: relative;
+    padding: 30px 0;
+    margin: auto;
+    .close_btn{
+        position: absolute;
+        right: 10px;
+        top: 0;
+        cursor: pointer;
+        padding: 5px;
+    }
+    .left{
+        font-size: 24px;
+        font-weight: 600;
+        padding: 0 20px;
+        text-align: center;
+    }
+    .right{
+        padding-top: 10px;
+        .input_wrapper{
+            &:not(:last-child){
+                margin-bottom: 10px;
+            }
+
+        }
+    }
+}
