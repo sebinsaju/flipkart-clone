@@ -6,6 +6,7 @@ import Button from "../button";
 import Modal from "react-modal";
 import Login from "../login";
 import Link from "next/link";
+import Signup from "../signup";
 const Header = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSignUpOpen, setisSignUpOpen] = useState(false);
@@ -19,6 +20,7 @@ const Header = () => {
   return (
     <div className={style.header}>
       <Modal isOpen={isSignUpOpen}>
+      <Signup onClose={toggleSignUp}/>
       </Modal>
       <Modal isOpen={isLoginOpen}>
         <Login onClose={toggleLogin} />

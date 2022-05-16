@@ -13,9 +13,7 @@ const Login = ({ onClose }) => {
         password: yup.string().required("Enter password"),
     })
     const handleSubmitCustom = async (values) => {
-        await login(values).then((res) => {
-            console.log(res)
-        }).catch((err) => {
+        await login(values).catch((err) => {
             console.log(err)
         })
     }
