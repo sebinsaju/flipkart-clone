@@ -4,6 +4,7 @@ import React from "react";
 import Input from "../input";
 import style from "./Signup.module.scss";
 import * as Yup from "yup";
+import { signup } from "../../services/signup";
 const INITIAL_VALUES = {
   name: "",
   email: "",
@@ -16,12 +17,17 @@ const INITIAL_VALUES = {
 };
 const VALIDATIONSCHEMA = Yup.object().shape({
   name: Yup.string().required("Enter Name"),
-  email:Yup.string().required("Enter email").email("Enter valid email"),
-  password:Yup.string().required("Enter a new password").min(6,"Enter a minimum of 6")
+  email: Yup.string().required("Enter email").email("Enter valid email"),
+  password: Yup.string()
+    .required("Enter a new password")
+    .min(6, "Enter a minimum of 6"),
+  phone: Yup.number().required("Required"),
 });
 const Signup = ({ onClose }) => {
-  const handleSubmit = (values) => {
-    console.log(values);
+  const handleSubmit = async (values) => {
+    await signup(values).then((res) => {
+      console.log(res);
+    });
   };
   return (
     <div className={style.signup}>
